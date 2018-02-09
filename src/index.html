@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8" />
+        <title>Bitcoin Key Compression Tool</title>
+        <link rel="stylesheet" href="css/bootstrap-3.3.7.css">
+        <meta content="Convert bitcoin keys between compressed and uncompressed format" name="description"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="Ian Coleman" name="author" />
+        <link type="image/x-icon" rel="icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" />
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="text-center">
+                <h1>Bitcoin Key Compression Tool</h1>
+                <p>This tool converts between compressed and uncompressed bitcoin keys.</p>
+                <p>The main purpose is as a diagnostic tool.</p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Input Key</h2>
+                    <form class="form" role="form">
+                        <div class="form-group">
+                            <p>Can be a public key (hex encoded) or a private key (WIF or BIP38 encoded)</p>
+                            <input class="supplied-key form-control" placeholder="Enter your key here">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">BIP38 password</label>
+                            <p>If the key is BIP38 encrypted this password will be used to decrypt it. This password is also used to encrypt the BIP38 fields in the output.</p>
+                            <input class="supplied-password form-control" placeholder="BIP38 password">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <hr>
+
+            <p class="text-center">
+                The input key is
+                <strong class="supplied-type">not a bitcoin key</strong>.
+            </p>
+
+            <hr>
+
+            <h2>Output</h2>
+
+            <div class="row">
+                <div class="compressed col-sm-12">
+                    <h3>Compressed</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="uncompressed col-sm-12">
+                    <h3>Uncompressed</h3>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>Offline Usage</h2>
+
+            <p>
+            You can use this tool without having to be online.
+            </p>
+            <p>
+            In your browser, select file save-as, and save this page as a file.
+            </p>
+            <p>
+            Double-click that file to open it in a browser on any offline computer.
+            </p>
+            <p>
+            <span>Alternatively, download the file from the repository</span>
+            -
+            <a href="https://github.com/iancoleman/keycompression">https://github.com/iancoleman/keycompression</a>
+            </p>
+
+            <hr>
+
+            <h2>This project is 100% open-source code</h2>
+
+            <p>
+                <span>Get the source code from the repository</span>
+                -
+                <a href="https://github.com/iancoleman/keycompression" target="_blank">
+                    https://github.com/iancoleman/keycompression
+                </a>
+            </p>
+
+            <h3>Libraries</h3>
+
+            <p>
+                <span>BitcoinJS - </span>
+                <a href="https://github.com/bitcoinjs/bitcoinjs-lib" target="_blank">
+                    https://github.com/bitcoinjs/bitcoinjs-lib
+                </a>
+            </p>
+
+            <p>
+                <span>BitcoinJS BIP38 - </span>
+                <a href="https://github.com/bitcoinjs/bip38" target="_blank">
+                    https://github.com/bitcoinjs/bip38
+                </a>
+            </p>
+
+            <p>
+                <span>BitcoinJS WIF - </span>
+                <a href="https://github.com/bitcoinjs/wif" target="_blank">
+                    https://github.com/bitcoinjs/wif
+                </a>
+            </p>
+
+            <p>
+                <span>jQuery - </span>
+                <a href="https://jquery.com/" target="_blank">
+                    https://jquery.com/
+                </a>
+            </p>
+
+            <p>
+                <span>Twitter Bootstrap - </span>
+                <a href="http://getbootstrap.com/" target="_blank">
+                    http://getbootstrap.com/
+                </a>
+            </p>
+
+
+        </div>
+
+        <script id="key-details" type="text/template">
+            <div class="form-group">
+                <label class="form-label">Address</label>
+                <input class="address form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Public Key (hex)</label>
+                <input class="public-key form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Private Key (WIF)</label>
+                <input class="private-key form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Private Key (BIP38)</label>
+                <input class="bip38-private-key form-control" readonly>
+            </div>
+        </script>
+
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bitcoinjs-3.3.0.js"></script>
+        <script src="js/bitcoinjs-bip38-2.0.2.js"></script>
+        <script src="js/bitcoinjs-wif-3.0.1.js"></script>
+        <script src="js/key-details.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
